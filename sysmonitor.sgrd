@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE KSysGuardWorkSheet>
+<WorkSheet interval="0.5" locked="0" title="Задание 2" columns="1" rows="3">
+ <host command="ksysguardd" port="-1" name="localhost" shell=""/>
+ <display title="Системная нагрузка" vScroll="0" hLines="1" version="1" vLines="0" hScale="6" fontSize="8" manualRange="0" columnSpan="1" stacked="0" vDistance="30" autoRange="1" unit="" column="0" labels="1" showUnit="0" svgBackground="" row="0" class="FancyPlotter" rowSpan="1">
+  <beam sensorType="float" sensorName="cpu/system/sys" hostName="localhost" color="0xff0057ae"/>
+ </display>
+ <display title="Тактовая частота" vScroll="0" hLines="1" version="1" vLines="0" hScale="6" fontSize="8" manualRange="0" columnSpan="1" stacked="0" vDistance="30" autoRange="1" unit="" column="0" labels="1" showUnit="0" svgBackground="" row="1" class="FancyPlotter" rowSpan="1">
+  <beam sensorType="float" sensorName="cpu/cpu0/clock" hostName="localhost" color="0xff0057ae"/>
+  <beam sensorType="float" sensorName="cpu/cpu1/clock" hostName="localhost" color="0xffe20800"/>
+  <beam sensorType="float" sensorName="cpu/cpu2/clock" hostName="localhost" color="0xfff3c300"/>
+  <beam sensorType="float" sensorName="cpu/cpu3/clock" hostName="localhost" color="0xffff0000"/>
+  <beam sensorType="float" sensorName="cpu/cpu4/clock" hostName="localhost" color="0xff00a900"/>
+  <beam sensorType="float" sensorName="cpu/cpu5/clock" hostName="localhost" color="0xff0028a9"/>
+  <beam sensorType="float" sensorName="cpu/cpu6/clock" hostName="localhost" color="0xffa92928"/>
+  <beam sensorType="float" sensorName="cpu/cpu7/clock" hostName="localhost" color="0xff28a929"/>
+ </display>
+ <display title="Простой" vScroll="0" hLines="1" version="1" vLines="0" hScale="6" fontSize="8" manualRange="0" columnSpan="1" stacked="0" vDistance="30" autoRange="1" unit="" column="0" labels="1" showUnit="0" svgBackground="" row="2" class="FancyPlotter" rowSpan="1">
+  <beam sensorType="float" sensorName="cpu/cpu0/idle" hostName="localhost" color="0xff0057ae"/>
+  <beam sensorType="float" sensorName="cpu/cpu1/idle" hostName="localhost" color="0xffe20800"/>
+  <beam sensorType="float" sensorName="cpu/cpu2/idle" hostName="localhost" color="0xfff3c300"/>
+  <beam sensorType="float" sensorName="cpu/cpu3/idle" hostName="localhost" color="0xffff0000"/>
+  <beam sensorType="float" sensorName="cpu/cpu4/idle" hostName="localhost" color="0xff00a900"/>
+  <beam sensorType="float" sensorName="cpu/cpu5/idle" hostName="localhost" color="0xff0028a9"/>
+  <beam sensorType="float" sensorName="cpu/cpu6/idle" hostName="localhost" color="0xffa92928"/>
+  <beam sensorType="float" sensorName="cpu/cpu7/idle" hostName="localhost" color="0xff28a929"/>
+ </display>
+</WorkSheet>

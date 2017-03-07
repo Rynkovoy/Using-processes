@@ -1,0 +1,28 @@
+#!/bin/bash
+# Запись путей временных файлав в переменные
+choice=`mktemp 2>/dev/null` 
+
+# Удаление временых файлов при получени одного из сигналов
+#while true
+#do
+k=$(dialog --menu --stdout "Vyberite nujnyi razdel" 20 70 4 1 "Sistemnaya informaciya" 2 "Sistemnyi monitor" 3 "Udalenie dochernih processov s pomoschiu signalov  SIGCHLD" 4 "Exit")
+case "$k" in                
+1 )
+./kurs 1>f1
+dialog --title "Info"  --clear --textbox f1 10 30   ;; 
+"2" )
+ksysguard `pwd`/1.sgrd 
+;;
+"3" )
+./1 1>f2.txt
+dialog --textbox ./f2.txt  15 70;;
+"4" )
+dialog --title "Confirm" --yesno "You want to quit?" 9 18
+if [ $? = 0 ]; then
+dialog --infobox "Thank you anyway" 5 20 
+sleep 2
+dialog --clear
+exit 0;
+fi;;
+esac
+#done; 

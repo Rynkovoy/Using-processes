@@ -1,0 +1,46 @@
+#!/bin/bash
+# Запись путей временных файлав в переменные
+choice=`mktemp 2>/dev/null` 
+trap "rm -f $p_file" 0 1 2 5 15
+# Удаление временых файлов при получени одного из сигналов
+
+dialog  --title "Choose the task" \
+        --clear \
+        --menu "Choose one of the task:" 10 105 3 \
+        "1" "Get system infomation" \
+        "2" "Launch system monitor KDE" \
+        "3" "Show work of channels" 2> $choice     
+button=$?  
+
+ case $button in
+     0)
+        case $(cat $choice) in
+           1)
+             ./sysinfo 1> info && dialog --title "System information" \
+                                  --textbox ./info 10 70 
+             sh tasks
+             rm info
+              ;;
+           2) 
+            ksysguard sysmonitor.sgrd 
+            sh tasks
+              ;;
+           3)
+              dialog --inputbox "Enter the string for writing into the channel:" 10 40 2> string
+              click=$?
+              case $click in
+                 0) str=`cat string`
+                    rm string
+                    ./channel "$str" 1> cinf && dialog --title "Channel work" \
+                    --textbox ./cinf 15 70
+                    rm cinf 
+                    sh tasks ;; 
+                 1) break  ;;
+                 255) break ;;
+                 esac ;;
+                              
+      esac ;;
+ 1)   break ;;
+ 255) break ;;
+ esac   
+ clear      

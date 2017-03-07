@@ -1,0 +1,18 @@
+
+#!/bin/bash
+dialog --title "Title stage"   --clear \
+       --msgbox "
+       								Course work
+       			\nfrom Paralle and Multithreading programming
+       			\n		      student of 333a course
+       			\n 		        by Anton Rynkovoy " 9 50
+       			#USERDATE=`$DIALOG --stdout --title "Календарь" --calendar "Выберите дату..." 00 7 7 1981`
+# Запоминаем нажатую кнопку
+button=$?
+#Обрабатываем  нажатую кнопку 
+case $button in
+    0)sh password
+      ;;
+esac
+clear  
+
